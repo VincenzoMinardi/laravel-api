@@ -20,3 +20,7 @@ use App\Http\Controllers\Api\ProjectController;
 // });
 
 Route::get('projects', [ProjectController::class, 'index'])->name('api.projects.index');
+
+// Creiamo la route per lo show 
+
+Route::get('projects/{projects}', [ProjectController::class, 'show'])->name('api.projects.show');

@@ -15,4 +15,14 @@ class ProjectController extends Controller
 
         return response()->json($project);
     }
+
+    public function show($id)
+    {
+        $project = Project::where('id', $id)->first();
+
+        return response()->json([
+            'success'   => $project ? true : false,
+            'results'   => $project,
+        ]);
+    }
 }
